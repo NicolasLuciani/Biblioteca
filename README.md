@@ -21,4 +21,4 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 - classes.py
 - menu.py
 
-Use o comando `biblioteca.cadastrar()` para adicionar livros.
+
