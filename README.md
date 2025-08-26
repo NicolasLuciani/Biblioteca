@@ -1,4 +1,4 @@
-# Sistema de Biblioteca em Python
+# 📚 Sistema de Biblioteca em Python
 
 ## Introdução
 <h4>Este projeto implementa um sistema de gerenciamento de biblioteca utilizando Python.  
@@ -8,7 +8,7 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 
 ---
 
-## Funcionalidades
+## ⚙️ Funcionalidades
 - Cadastro de livros  
 - Empréstimo de livros  
 - Devolução de livros  
@@ -422,7 +422,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 #### O usuário informa o título, se o livro for encontrado, ele é removido da lista.
 ---
 
-# Vamos agora para o menu
+# 📂 Vamos agora para o menu
 
 ```python
 import time
