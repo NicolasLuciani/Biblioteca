@@ -8,7 +8,7 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 
 ---
 
-## Funcionalidades
+## ⚙️ Funcionalidades
 - Cadastro de livros  
 - Empréstimo de livros  
 - Devolução de livros  
