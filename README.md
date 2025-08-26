@@ -52,6 +52,7 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 <h2> Vamos ao código</h2>
 
 class Livro:
+    
     def __init__(self, titulo, autor, ano, categoria):
         self.__titulo = titulo
         self.__autor = autor
@@ -60,7 +61,7 @@ class Livro:
         self.__disponibilidade = True
 
 <h3>Adicionamos titulos, autor, ano e categoria aos tópicos disponiveis do livro
-Onde está disponibilidade = True, diz que o livro está disponível</h3>
+Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 <h3>Emprestar</h3>
 
@@ -229,7 +230,7 @@ Onde está disponibilidade = True, diz que o livro está disponível</h3>
     
             livro_encontrado = None
             for livro in self.__livros:
-                if livro.getTitulo().lower() == atualizar_livro.lower():
+                if livro.getTitulo() == atualizar_livro:
                     livro_encontrado = livro
                     break
             
@@ -256,7 +257,7 @@ Onde está disponibilidade = True, diz que o livro está disponível</h3>
         def emprestar_livro(self):
             titulo = input("Digite o título do livro para empréstimo: ")
             for livro in self.__livros:
-                if livro.getTitulo().lower() == titulo.lower():
+                if livro.getTitulo() == titulo:
                     livro.emprestar()
                     return
             print("Livro não encontrado")
@@ -264,7 +265,7 @@ Onde está disponibilidade = True, diz que o livro está disponível</h3>
         def devolver_livro(self):
             titulo = input("Digite o título do livro para devolução: ")
             for livro in self.__livros:
-                if livro.getTitulo().lower() == titulo.lower():
+                if livro.getTitulo() == titulo:
                     livro.devolver()
                     return
             print("Livro não encontrfado")
