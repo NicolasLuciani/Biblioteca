@@ -9,9 +9,9 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 ---
 
 ## Funcionalidades
-<h4>- Cadastro de livros  
-- Empréstimo de  livros
-- devolução de livros
+- Cadastro de livros  
+- Empréstimo de livros  
+- Devolução de livros  
 - Listagem de livros (todos ou por categoria)  
 - Atualização de informações de livros  
-- Exclusão de livros</h4>
+- Exclusão de livros
