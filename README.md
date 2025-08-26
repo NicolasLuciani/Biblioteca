@@ -51,6 +51,8 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 
 <h2> Vamos ao código</h2>
 
+'''python
+
 ## class Livro:
 
     def __init__(self, titulo, autor, ano, categoria):
