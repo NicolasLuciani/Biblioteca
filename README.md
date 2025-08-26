@@ -425,8 +425,8 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 # Vamos agora para o menu
 
 ```python
-import time # importei a biblioteca time
-import os # importei a biblioteca os
+import time
+import os 
 from classes import Biblioteca
 biblioteca = Biblioteca()
 
@@ -480,3 +480,11 @@ while True:                   # criação do menu
 ```python
 ESCOLHA INVÁLIDA
 ```
+## Bibliotecas Python que usamos:
+
+### Neste projeto, utilizamos algumas bibliotecas padrão do Python:
+
+- `os` → Permite interagir com o sistema operacional, como pausar a execução do programa.  
+- `time` → Permite manipular o tempo, por exemplo, para pausar a execução por alguns segundos.
+
+## Funções que utilizamos em Python:
