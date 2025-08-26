@@ -71,6 +71,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
+```python
 
     def emprestar(self):
         if self.__disponibilidade == True:
@@ -81,11 +82,14 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
             print(f"'{self.__titulo}' já está emprestado!")
             os.system("pause")
 
+
 <h3>Aqui diz que a disponibilidade esta 'True', ou seja, disponível e agora você vai pegar o livro, então, agora ele está 'False'</h3>
 
 ---
 <br>
 <br>
+
+```python
 
     def devolver(self):
         if self.__disponibilidade == False:
@@ -94,11 +98,14 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
         else:
             print(f"'{self.__titulo}' já está disponível!")
 
+```
+
 <h3>Aqui diz que a disponibilidade esta 'False', ou seja, Você vai devolver, então, ele volta a ser 'True'</h3>
 
 ---
 <br>
 <br>
+```python
 
     def getTitulo(self):
         return self.__titulo
@@ -121,6 +128,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
+```python
 
     def setTitulo(self, titulo):
         self.__titulo = titulo
@@ -142,6 +150,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
+```python
 
     class Biblioteca:
         def __init__(self):
@@ -151,6 +160,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
+ ```python
  
         def getLivros(self):
             return self.__livros
@@ -159,6 +169,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
+        ```python
         
         def setLivros(self, livros):
             self.__livros = livros
@@ -167,6 +178,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
+```python
 
         def cadastrar(self):
                 print("Você está na tela de cadastro de livro.\n")
@@ -198,6 +210,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
+       ```python
        
     def qual_listar(self):
         while True:
@@ -222,7 +235,8 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
-       
+```python       
+
     def listar(self):
         print("Você está na tela listar.\n")
         if not self.__livros:
@@ -238,7 +252,8 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
-   
+ ```python  
+ 
     def listar_categoria(self):
         print("Você está na parte de listar por categoria.\n")
         categoria = input("DIGITE A CATEGORIA: ")
@@ -265,6 +280,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
+```python
 
         def listar_autor(self):
         print("Você está na parte de listar por autor.\n")
@@ -292,7 +308,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
-
+```python
         
         def atualizar_livros(self):
             atualizar_livro = input("Digite o nome do livro que deseja atualizar: ")
@@ -325,7 +341,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
-
+```python
     
         def emprestar_livro(self):
             titulo = input("Digite o título do livro para empréstimo: ")
@@ -340,7 +356,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
-
+```python
 
         def devolver_livro(self):
             titulo = input("Digite o título do livro para devolução: ")
@@ -354,7 +370,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ---
 <br>
 <br>
-
+```python
 
         def excluir(self):
             titulo = input("Digite o título do livro que deseja excluir: ")
