@@ -180,7 +180,7 @@ class Biblioteca:
             if livro.getTitulo().lower() == titulo.lower():
                 livro.devolver()
                 return
-        print("Livro não encontrado")
+        print("Livro não encontrfado")
 
     def excluir(self):
         titulo = input("Digite o título do livro que deseja excluir: ")
