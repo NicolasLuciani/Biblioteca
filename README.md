@@ -21,14 +21,29 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 - classes.py
 - menu.py
 
-## Classes e seus atributos e métodos
-<h3>Class Livro()
- - __init__
- - emprestar
- - devolver
-Class Biblioteca()
- - __init__
- - Cadatrar
- - atualizar
- - listagens
- - excluir</h3>
+## Sistema de Biblioteca
+
+## Classe Livro
+**Atributos:**
+- `titulo`
+- `autor`
+- `categoria`
+- `disponivel` (boolean)
+
+**Métodos:**
+- `__init__(self, titulo, autor, categoria)` → inicializa o livro
+- `emprestar(self)` → marca o livro como indisponível
+- `devolver(self)` → marca o livro como disponível
+
+---
+
+## Classe Biblioteca
+**Atributos:**
+- `livros` (lista de objetos `Livro`)
+
+**Métodos:**
+- `__init__(self)` → inicializa a lista de livros
+- `cadastrar(self, livro)` → adiciona um livro à lista
+- `atualizar(self, titulo_antigo, novo_livro)` → atualiza dados de um livro
+- `listar(self, categoria=None)` → lista todos os livros ou por categoria
+- `excluir(self, titulo)` → remove um livro da lista
