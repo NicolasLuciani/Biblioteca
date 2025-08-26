@@ -1,9 +1,9 @@
-import time 
-import os 
+import time # importei a biblioteca time
+import os # importei a biblioteca os
 from classes import Biblioteca
 biblioteca = Biblioteca()
 
-while True:                  
+while True:                   # criação do menu
     os.system("cls")
     print("BEM VINDO AO MENU!")
     print(30*"- ")
@@ -18,7 +18,7 @@ while True:
     escolha = int(input("--> "))
     time.sleep(1)
 
-    if escolha == 1:      
+    if escolha == 1:        # opção de cadastro
         biblioteca.cadastrar()
 
     elif escolha == 2:
