@@ -34,7 +34,6 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 - `__init__(self, titulo, autor, categoria)` → inicializa o livro
 - `emprestar(self)` → marca o livro como indisponível
 - `devolver(self)` → marca o livro como disponível
-
 ---
 
 ## Classe Biblioteca
