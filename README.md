@@ -15,3 +15,8 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 - Listagem de livros (todos ou por categoria)  
 - Atualização de informações de livros  
 - Exclusão de livros
+
+## A estrutura dos códigos:
+- app.py
+- classes.py
+- menu.py
