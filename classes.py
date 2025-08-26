@@ -65,7 +65,33 @@ class Livro:
 
 class Biblioteca:
     def __init__(self):
-        self.__livros = []
+        self.__livros = [
+        ("1984", "George Orwell", 1949, "Distopia"),
+        ("O Senhor dos Anéis", "J.R.R. Tolkien", 1954, "Fantasia"),
+        ("Harry Potter e a Pedra Filosofal", "J.K. Rowling", 1997, "Fantasia"),
+        ("Dom Quixote", "Miguel de Cervantes", 1605, "Clássico"),
+        ("O Pequeno Príncipe", "Antoine de Saint-Exupéry", 1943, "Infantil"),
+        ("Moby Dick", "Herman Melville", 1851, "Aventura"),
+        ("Orgulho e Preconceito", "Jane Austen", 1813, "Romance"),
+        ("O Hobbit", "J.R.R. Tolkien", 1937, "Fantasia"),
+        ("O Código Da Vinci", "Dan Brown", 2003, "Suspense"),
+        ("A Revolução dos Bichos", "George Orwell", 1945, "Satírico"),
+        ("O Alquimista", "Paulo Coelho", 1988, "Ficção"),
+        ("Cem Anos de Solidão", "Gabriel García Márquez", 1967, "Realismo Mágico"),
+        ("O Morro dos Ventos Uivantes", "Emily Brontë", 1847, "Romance"),
+        ("O Grande Gatsby", "F. Scott Fitzgerald", 1925, "Romance"),
+        ("O Sol é Para Todos", "Harper Lee", 1960, "Romance"),
+        ("A Menina que Roubava Livros", "Markus Zusak", 2005, "Ficção"),
+        ("O Guia do Mochileiro das Galáxias", "Douglas Adams", 1979, "Ficção Científica"),
+        ("Alice no País das Maravilhas", "Lewis Carroll", 1865, "Infantil"),
+        ("Frankenstein", "Mary Shelley", 1818, "Terror"),
+        ("Drácula", "Bram Stoker", 1897, "Terror"),
+        ("O Perfume", "Patrick Süskind", 1985, "Suspense"),
+        ("A Cabana", "William P. Young", 2007, "Ficção"),
+        ("O Diário de Anne Frank", "Anne Frank", 1947, "Biografia"),
+        ("Jogos Vorazes", "Suzanne Collins", 2008, "Distopia"),
+        ("Crepúsculo", "Stephenie Meyer", 2005, "Romance")
+    ]
 
     # get
     def getLivros(self):
