@@ -153,10 +153,11 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 <br>
 <br>
 
+```python
     class Biblioteca:
         def __init__(self):
             self.__livros = []
-
+```
 
 
 #### Class biblioteca
@@ -164,23 +165,27 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 <br>
 <br>
 
- 
+```python
         def getLivros(self):
             return self.__livros
+```
 
 #### 'get' para pegar os valores
 ---
 <br>
 <br>
-        
+
+```python
         def setLivros(self, livros):
             self.__livros = livros
-        
+```
+
 #### 'set' renovar os valores
 ---
 <br>
 <br>
 
+```python
         def cadastrar(self):
                 print("Você está na tela de cadastro de livro.\n")
                 qtd_livros = int(input("Quantos livros deseja cadastrar?\n-> "))
@@ -206,12 +211,14 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
             
         print("LIVROS CADASTRADOS COM SUCESSO")
         time.sleep(2)
+```
 
 #### Aqui o cadastro funciona diferente, você escolhe um numero e cadastra os livros dependendo da quantidade que você escolheu, e você adiciona a disponibilidade do livro, sim ou não.
 ---
 <br>
 <br>
-       
+
+```python
     def qual_listar(self):
         while True:
             print("\nVocê está na tela de listar.\n")
@@ -230,12 +237,14 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
             else:
                 print("Escolha so o 1, 2 ou 3")
                 time.sleep(1)
+```
 
 #### Aqui é um menu de cada tipo de lista (mostrados abaixo).
 ---
 <br>
 <br>     
 
+```python
     def listar(self):
         print("Você está na tela listar.\n")
         if not self.__livros:
@@ -245,13 +254,14 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
         for livro in self.__livros:
             status = "Disponível" if livro.getDisponibilidade() else "Emprestado"
             print(f"{livro.getTitulo()} - {livro.getAutor()} ({livro.getAno()}) - {livro.getCategoria()} | [{status}]")
-    
+```
 
 #### Caso não há livros, não consegue listar, caso contrario ele lista, com a informação se está disponivel ou não.
 ---
 <br>
 <br>
- 
+
+```python
     def listar_categoria(self):
         print("Você está na parte de listar por categoria.\n")
         categoria = input("DIGITE A CATEGORIA: ")
@@ -272,13 +282,14 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
                 status = "Emprestado"
             print(f"{livro.getTitulo()} - {livro.getAutor()} ({livro.getAno()}) | [{status}]")
         time.sleep(2)
-        
+```
 
 #### Caso não há livros, não consegue listar, caso contrario, ele lista, cada categoria.
 ---
 <br>
 <br>
 
+```python
         def listar_autor(self):
         print("Você está na parte de listar por autor.\n")
         autor = input("DIGITE O AUTOR: ")
@@ -299,13 +310,14 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
                 status = "Emprestado"
             print(f"{livro.getTitulo()} - {livro.getCategoria()} ({livro.getAno()}) | [{status}]")
         time.sleep(2)
-
+```
 
 #### Aqui você lista os autores
 ---
 <br>
 <br>
-        
+
+```python
         def atualizar_livros(self):
             atualizar_livro = input("Digite o nome do livro que deseja atualizar: ")
     
@@ -332,12 +344,14 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
                 livro_encontrado.setAno(int(novo_ano))
             if nova_categoria != "":
                 livro_encontrado.setCategoria(nova_categoria)
+```
 
 #### Nesses quatro 'if', ele apenas atualizara caso haver algo escrito senão, ele não renova nada.
 ---
 <br>
 <br>
-    
+
+```python
         def emprestar_livro(self):
             titulo = input("Digite o título do livro para empréstimo: ")
             for livro in self.__livros:
@@ -345,13 +359,14 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
                     livro.emprestar()
                     return
             print("Livro não encontrado")
-
+```
 
 #### Aqui diz que a disponibilidade esta 'True', ou seja, disponível e agora você vai pegar o livro, então, agora ele está 'False'
 ---
 <br>
 <br>
 
+```python
         def devolver_livro(self):
             titulo = input("Digite o título do livro para devolução: ")
             for livro in self.__livros:
@@ -359,12 +374,14 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
                     livro.devolver()
                     return
             print("Livro não encontrfado")
+```
 
 #### Aqui diz que a disponibilidade esta 'False', ou seja, não está disponível, então, agora ele está 'True'
 ---
 <br>
 <br>
 
+```python
         def excluir(self):
             titulo = input("Digite o título do livro que deseja excluir: ")
             for livro in self.__livros:
@@ -373,6 +390,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
                     print(f"O livro '{titulo}' foi removido com sucesso!")
                     return
             print("Livro não encontrado!")
+```
 
 #### O usuário informa o título, se o livro for encontrado, ele é removido da lista.
     
