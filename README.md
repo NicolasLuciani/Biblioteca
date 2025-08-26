@@ -311,8 +311,35 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
             print(f"{livro.getTitulo()} - {livro.getCategoria()} ({livro.getAno()}) | [{status}]")
         time.sleep(2)
 ```
+#### Caso não há livros, não consegue listar, caso contrario, ele lista, cada autor.
+---
+<br>
+<br>
 
-#### Aqui você lista os autores
+```python
+
+    def listar_emprestados(self):
+        os.system("cls")
+        print("Você está na parte de listar por emprestados.\n")
+        print("---------------------------------------------------------\n")
+        lista_emprestados = []
+        for livro in self.__livros:
+            if livro.getDisponibilidade() == False:
+                lista_emprestados.append(livro)
+        
+        if not lista_emprestados:
+            print(f"Nenhum livro encontrado está emprestado")
+            print()
+            os.system("pause")
+            return
+            
+        for livro in lista_emprestados:
+            print(f"{livro.getTitulo()} - {livro.getCategoria()} - {livro.getAutor()} ({livro.getAno()})")
+        print()
+        os.system("pause")    
+```
+
+#### Caso não há livros, não consegue listar, caso contrario, ele lista os livros emprestados.
 ---
 <br>
 <br>
@@ -451,6 +478,5 @@ while True:                   # criação do menu
 #### Agora para o menu, temos as bibliotecas importadas, time e os, para a estética do código, o menu te da opções de cadastrar livro, emprestar um livro, devolver os livros,  escolher o tipo da lista, atualizar os livros, excluir livros e sair do sistema, cada escolha vai a uma função ja explicada
 #### Caso você coloque uma opção que não existe ele te integra:
 ```python
-ESCOLHA INVÀLIDA
+ESCOLHA INVÁLIDA
 ```
-``
