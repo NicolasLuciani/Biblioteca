@@ -34,6 +34,7 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 - `__init__(self, titulo, autor, categoria)` → inicializa o livro
 - `emprestar(self)` → marca o livro como indisponível
 - `devolver(self)` → marca o livro como disponível
+  
 ---
 
 ## Classe Biblioteca
@@ -74,6 +75,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
             os.system("pause")
 
 <h3>Aqui diz que a disponibilidade esta 'True', ou seja, disponível e agora você vai pegar o livro, então, agora ele está 'False'</h3>
+
 ---
 
     def devolver(self):
@@ -82,8 +84,9 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
             print(f"Você devolveu este livro '{self.__titulo}'")
         else:
             print(f"'{self.__titulo}' já está disponível!")
-            
+
 <h3>Aqui diz que a disponibilidade esta 'False', ou seja, Você vai devolver, então, ele volta a ser 'True'</h3>
+
 ---
 
     def getTitulo(self):
@@ -103,6 +106,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 
 <h3>Utilizamos o comando 'get', para pegar os valores</h3>
+
 ---
     
     def setTitulo(self, titulo):
@@ -121,6 +125,7 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
         self.__disponibilidade = disponibilidade
 
 <h3>Utilizamos o comando 'set', para renovar os valores</h3>
+
 ---
 
     class Biblioteca:
