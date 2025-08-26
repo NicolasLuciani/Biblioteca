@@ -49,8 +49,8 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 - `excluir(self, titulo)` → remove um livro da lista
 
 
+<h2> Vamos ao código</h2>
 
-from app import *
 class Livro:
     def __init__(self, titulo, autor, ano, categoria):
         self.__titulo = titulo
@@ -59,6 +59,11 @@ class Livro:
         self.__categoria = categoria
         self.__disponibilidade = True
 
+<h3>Adicionamos titulos, autor, ano e categoria aos tópicos disponiveis do livro
+Onde está disponibilidade = True, diz que o livro está disponível</h3>
+
+<h3>Emprestar</h3>
+
     def emprestar(self):
         if self.__disponibilidade == True:
             self.__disponibilidade = False
@@ -66,14 +71,21 @@ class Livro:
         else:
             print(f"'{self.__titulo}' já está emprestado!")
 
+<h3>Aqui diz que a disponibilidade esta 'True', ou seja, disponível e agora você vai pegar o livro, então, agora ele está 'False'</h3>
+
     def devolver(self):
         if self.__disponibilidade == False:
             self.__disponibilidade = True
             print(f"Você devolveu este livro '{self.__titulo}'")
         else:
             print(f"'{self.__titulo}' já está disponível!")
+            
+<h3>Aqui diz que a disponibilidade esta 'False', ou seja, Você vai devolver, então, ele volta a ser 'True'</h3>
 
     # ---------------- get ------------------------------
+
+<h3>Utilizamos o comando 'get', para pegar os valores</h3>
+
     def getTitulo(self):
         return self.__titulo
 
@@ -90,6 +102,9 @@ class Livro:
         return self.__disponibilidade
 
     # ---------------- set -------------------------
+
+<h3>Utilizamos o comando 'set', para renovar os valores</h3>
+    
     def setTitulo(self, titulo):
         self.__titulo = titulo
 
@@ -105,141 +120,4 @@ class Livro:
     def setDisponibilidade(self, disponibilidade):
         self.__disponibilidade = disponibilidade
 
-
-class Biblioteca:
-    def __init__(self):
-        self.__livros = []
-
-    # get
-    def getLivros(self):
-        return self.__livros
-    
-    # set
-    def setLivros(self, livros):
-        self.__livros = livros
-    
-    # ---------------------------------metodos-------------------------------
-    def cadastrar(self):
-        print("Você está na tela de cadastro de livro.\n")
-        qtd_livros = int(input("Quantos livros deseja cadastrar?\n-> "))
-        for i in range(qtd_livros):
-            titulo = input(f"DIGITE O NOME DO {i+1}º livro: ")    
-            autor = input(f"DIGITE O AUTOR(A) DO {i+1}º livro: ")
-            ano = int(input(f"DIGITE O ANO DO {i+1}º livro: "))
-            categoria = input(f"DIGITE A CATEGORIA DO {i+1}º livro: ")
-            
-            while True:
-                disponibilidade = input("DIGITE s/n PARA A DISPONIBILIDADE DO livro: ").lower()
-                if disponibilidade == 's':
-                    t_ou_f = True
-                    break
-                elif disponibilidade == 'n':
-                    t_ou_f = False
-                    break
-                else:
-                    print("DIGITE SOMENTE s ou n")
-            livro = Livro(titulo, autor, ano, categoria)
-            livro.setDisponibilidade(t_ou_f)
-            self.__livros.append(livro)
-            
-        print("LIVROS CADASTRADOS COM SUCESSO")
-    
-    # --------------------------------------------------------------------------------
-    def qual_listar(self):
-        while True:
-            print("\nVocê está na tela de listar.\n")
-            print("ESCOLHA UMA OPÇÃO: ")
-            qual = int(input("1- LISTAR NORMALMENTE\n2-LISTAR POR CATEGORIA\n3- VOLTAR\n-> "))
-            if qual == 1:
-                self.listar()
-            elif qual == 2:
-                self.listar_categoria()
-            elif qual == 3:
-                break
-            else:
-                print("Escolha so o 1, 2 ou 3")
-    
-    # -----------------------------------------------------------------------------------------
-    def listar(self):
-        print("Você está na tela listar.\n")
-        if not self.__livros:
-            print("Nenhum livro cadastrado")
-            return
-            
-        for livro in self.__livros:
-            status = "Disponível" if livro.getDisponibilidade() else "Emprestado"
-            print(f"{livro.getTitulo()} - {livro.getAutor()} ({livro.getAno()}) - {livro.getCategoria()} | [{status}]")
-    
-    # --------------------------------------------------------------------------------------------
-    def listar_categoria(self):
-        print("Você está na parte de listar por categoria.\n")
-        categoria = input("DIGITE A CATEGORIA: ")
-        lista_categoria = []
-        
-        for livro in self.__livros:
-            if livro.getCategoria().lower() == categoria.lower():
-                lista_categoria.append(livro)
-        
-        if not lista_categoria:
-            print(f"Nenhum livro encontrado na categoria '{categoria}'")
-            return
-            
-        for livro in lista_categoria:
-            status = "Disponível" if livro.getDisponibilidade() else "Emprestado"
-            print(f"{livro.getTitulo()} - {livro.getAutor()} ({livro.getAno()}) | [{status}]")
-    
-    # -------------------------------------------------------------------
-    def atualizar_livros(self):
-        atualizar_livro = input("Digite o nome do livro que deseja atualizar: ")
-
-        livro_encontrado = None
-        for livro in self.__livros:
-            if livro.getTitulo().lower() == atualizar_livro.lower():
-                livro_encontrado = livro
-                break
-        
-        if livro_encontrado is None:
-            print("Livro não encontrado!")
-            return
-        
-        novo_autor = input("Atualize o autor do livro (Enter para manter atual):\n---> ")
-        novo_titulo = input("Atualize o título do livro (Enter para manter atual):\n---> ")
-        novo_ano = input("Atualize o ano do livro (Enter para manter atual):\n---> ")
-        nova_categoria = input("Atualize a categoria do livro (Enter para manter atual):\n---> ")
-
-        if novo_autor != "":
-            livro_encontrado.setAutor(novo_autor)
-        if novo_titulo != "":
-            livro_encontrado.setTitulo(novo_titulo)
-        if novo_ano != "":
-            livro_encontrado.setAno(int(novo_ano))
-        if nova_categoria != "":
-            livro_encontrado.setCategoria(nova_categoria)
-        
-        print(f"Livro '{livro_encontrado.getTitulo()}' atualizado com sucesso!")
-
-    def emprestar_livro(self):
-        titulo = input("Digite o título do livro para empréstimo: ")
-        for livro in self.__livros:
-            if livro.getTitulo().lower() == titulo.lower():
-                livro.emprestar()
-                return
-        print("Livro não encontrado")
-
-    def devolver_livro(self):
-        titulo = input("Digite o título do livro para devolução: ")
-        for livro in self.__livros:
-            if livro.getTitulo().lower() == titulo.lower():
-                livro.devolver()
-                return
-        print("Livro não encontrfado")
-
-    def excluir(self):
-        titulo = input("Digite o título do livro que deseja excluir: ")
-        for livro in self.__livros:
-            if livro.getTitulo() == titulo:
-                Biblioteca.remove(livro)
-                print(f"O livro '{titulo}' foi removido com sucesso!")
-                return
-        print("Livro não encontrado!")
 
