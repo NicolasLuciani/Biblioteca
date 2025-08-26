@@ -61,6 +61,7 @@ class Livro:
 
 <h3>Adicionamos titulos, autor, ano e categoria aos tópicos disponiveis do livro
 Onde disponibilidade = True, diz que o livro está disponível</h3>
+
 ---
 
     def emprestar(self):
