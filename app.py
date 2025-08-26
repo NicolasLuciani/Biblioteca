@@ -1,7 +1,7 @@
 import time # importei a biblioteca time
 import os # importei a biblioteca os
-from classes import * # importei todas as classe do arquivo classes
-from funcoes import cadastrar, emprestar, qual_listar, atualizar_livros, excluir  # importei todas as funções do arquivo funcoes
+from classes import cadastrar, emprestar, qual_listar, atualizar_livros, excluir 
+# importei todas as classe do arquivo classes
 
 
 
