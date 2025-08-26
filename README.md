@@ -393,7 +393,6 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 ```
 
 #### O usuário informa o título, se o livro for encontrado, ele é removido da lista.
-
 ---
 
-## Vamos agora para o menu
+# Vamos agora para o menu
