@@ -51,9 +51,11 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
 
 <h2> Vamos ao código</h2>
 
-'''python
+
 
 ## class Livro:
+
+```python
 
     def __init__(self, titulo, autor, ano, categoria):
         self.__titulo = titulo
@@ -61,6 +63,7 @@ O sistema é interativo, apresentando um menu de opções no terminal, permitind
         self.__ano = ano
         self.__categoria = categoria
         self.__disponibilidade = True
+```python
 
 <h3>Adicionamos titulos, autor, ano e categoria aos tópicos disponiveis do livro
 Onde disponibilidade = True, diz que o livro está disponível</h3>
