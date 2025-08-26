@@ -1,4 +1,4 @@
-# Sistema de Biblioteca em Python
+# 📚 Sistema de Biblioteca em Python
 
 ## Introdução
 <h4>Este projeto implementa um sistema de gerenciamento de biblioteca utilizando Python.  
