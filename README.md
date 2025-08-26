@@ -64,6 +64,8 @@ class Livro:
 Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 ---
+<br>
+<br>
 
     def emprestar(self):
         if self.__disponibilidade == True:
@@ -77,6 +79,8 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 <h3>Aqui diz que a disponibilidade esta 'True', ou seja, disponível e agora você vai pegar o livro, então, agora ele está 'False'</h3>
 
 ---
+<br>
+<br>
 
     def devolver(self):
         if self.__disponibilidade == False:
@@ -88,6 +92,8 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 <h3>Aqui diz que a disponibilidade esta 'False', ou seja, Você vai devolver, então, ele volta a ser 'True'</h3>
 
 ---
+<br>
+<br>
 
     def getTitulo(self):
         return self.__titulo
@@ -108,7 +114,9 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 <h3>Utilizamos o comando 'get', para pegar os valores</h3>
 
 ---
-    
+<br>
+<br>
+
     def setTitulo(self, titulo):
         self.__titulo = titulo
 
@@ -127,6 +135,8 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 <h3>Utilizamos o comando 'set', para renovar os valores</h3>
 
 ---
+<br>
+<br>
 
     class Biblioteca:
         def __init__(self):
@@ -134,18 +144,24 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 #### Class biblioteca
 ---
-        
+<br>
+<br>
+ 
         def getLivros(self):
             return self.__livros
 
 #### 'get' para pegar os valores
 ---
+<br>
+<br>
         
         def setLivros(self, livros):
             self.__livros = livros
         
 #### 'set' renovar os valores
 ---
+<br>
+<br>
 
         def cadastrar(self):
                 print("Você está na tela de cadastro de livro.\n")
@@ -175,7 +191,9 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 #### Aqui o cadastro funciona diferente, você escolhe um numero e cadastra os livros dependendo da quantidade que você escolheu, e você adiciona a disponibilidade do livro, sim ou não.
 ---
-        
+<br>
+<br>
+       
     def qual_listar(self):
         while True:
             print("\nVocê está na tela de listar.\n")
@@ -197,7 +215,9 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 #### Aqui é um menu de cada tipo de lista (mostrados abaixo).
 ---
-        
+<br>
+<br>
+       
     def listar(self):
         print("Você está na tela listar.\n")
         if not self.__livros:
@@ -211,7 +231,9 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 #### Caso não há livros, não consegue listar, caso contrario ele lista, com a informação se está disponivel ou não.
 ---
-        
+<br>
+<br>
+   
     def listar_categoria(self):
         print("Você está na parte de listar por categoria.\n")
         categoria = input("DIGITE A CATEGORIA: ")
@@ -236,6 +258,8 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 #### Caso não há livros, não consegue listar, caso contrario, ele lista, cada categoria.
 ---
+<br>
+<br>
 
         def listar_autor(self):
         print("Você está na parte de listar por autor.\n")
@@ -261,6 +285,9 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 #### Aqui você lista os autores
 ---
+<br>
+<br>
+
         
         def atualizar_livros(self):
             atualizar_livro = input("Digite o nome do livro que deseja atualizar: ")
@@ -291,6 +318,9 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 #### Nesses quatro 'if', ele apenas atualizara caso haver algo escrito senão, ele não renova nada.
 ---
+<br>
+<br>
+
     
         def emprestar_livro(self):
             titulo = input("Digite o título do livro para empréstimo: ")
@@ -303,6 +333,9 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 #### Aqui diz que a disponibilidade esta 'True', ou seja, disponível e agora você vai pegar o livro, então, agora ele está 'False'
 ---
+<br>
+<br>
+
 
         def devolver_livro(self):
             titulo = input("Digite o título do livro para devolução: ")
@@ -314,6 +347,9 @@ Onde disponibilidade = True, diz que o livro está disponível</h3>
 
 #### Aqui diz que a disponibilidade esta 'False', ou seja, não está disponível, então, agora ele está 'True'
 ---
+<br>
+<br>
+
 
         def excluir(self):
             titulo = input("Digite o título do livro que deseja excluir: ")
