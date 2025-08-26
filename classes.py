@@ -1,4 +1,5 @@
-from app import *
+import time
+import os
 class Livro:
     def __init__(self, titulo, autor, ano, categoria):
         self.__titulo = titulo
@@ -11,8 +12,10 @@ class Livro:
         if self.__disponibilidade == True:
             self.__disponibilidade = False
             print(f"Você emprestou '{self.__titulo}'")
+            os.system("pause")
         else:
             print(f"'{self.__titulo}' já está emprestado!")
+            os.system("pause")
 
     def devolver(self):
         if self.__disponibilidade == False:
@@ -71,13 +74,13 @@ class Biblioteca:
         print("Você está na tela de cadastro de livro.\n")
         qtd_livros = int(input("Quantos livros deseja cadastrar?\n-> "))
         for i in range(qtd_livros):
-            titulo = input(f"DIGITE O NOME DO {i+1}º livro: ")    
-            autor = input(f"DIGITE O AUTOR(A) DO {i+1}º livro: ")
-            ano = int(input(f"DIGITE O ANO DO {i+1}º livro: "))
-            categoria = input(f"DIGITE A CATEGORIA DO {i+1}º livro: ")
+            titulo = input(f"DIGITE O NOME DO {i+1}º LIVRO: ")    
+            autor = input(f"DIGITE O AUTOR(A) DO {i+1}º LIVRO: ")
+            ano = int(input(f"DIGITE O ANO DO {i+1}º LIVRO: "))
+            categoria = input(f"DIGITE A CATEGORIA DO {i+1}º LIVRO: ")
             
             while True:
-                disponibilidade = input("DIGITE s/n PARA A DISPONIBILIDADE DO livro: ").lower()
+                disponibilidade = input("DIGITE s/n PARA A DISPONIBILIDADE DO LIVRO: ").lower()
                 if disponibilidade == 's':
                     t_ou_f = True
                     break
@@ -85,27 +88,33 @@ class Biblioteca:
                     t_ou_f = False
                     break
                 else:
-                    print("DIGITE SOMENTE s ou n")
+                    print("DIGITE SOMENTE s OU n")
             livro = Livro(titulo, autor, ano, categoria)
             livro.setDisponibilidade(t_ou_f)
             self.__livros.append(livro)
             
         print("LIVROS CADASTRADOS COM SUCESSO")
+        time.sleep(2)
     
     # --------------------------------------------------------------------------------
     def qual_listar(self):
         while True:
             print("\nVocê está na tela de listar.\n")
             print("ESCOLHA UMA OPÇÃO: ")
-            qual = int(input("1- LISTAR NORMALMENTE\n2-LISTAR POR CATEGORIA\n3- VOLTAR\n-> "))
+            qual = int(input("1- LISTAR NORMALMENTE\n2- LISTAR POR CATEGORIA\n3- LISTAR POR AUTOR\n4- LISTAR POR EMPRESTADOS\n5- VOLTAR\n-> "))
             if qual == 1:
                 self.listar()
             elif qual == 2:
                 self.listar_categoria()
             elif qual == 3:
+                self.listar_autor()
+            elif qual == 4:
+                self.listar_emprestados()
+            elif qual == 5:
                 break
             else:
                 print("Escolha so o 1, 2 ou 3")
+                time.sleep(1)
     
     # -----------------------------------------------------------------------------------------
     def listar(self):
@@ -133,9 +142,47 @@ class Biblioteca:
             return
             
         for livro in lista_categoria:
-            status = "Disponível" if livro.getDisponibilidade() else "Emprestado"
+            if livro.getDisponibilidade() == True:
+                status = "Disponivel"
+            else:
+                status = "Emprestado"
             print(f"{livro.getTitulo()} - {livro.getAutor()} ({livro.getAno()}) | [{status}]")
-    
+        time.sleep(2)
+
+    def listar_autor(self):
+        print("Você está na parte de listar por autor.\n")
+        autor = input("DIGITE O AUTOR: ")
+        lista_autor = []
+        
+        for livro in self.__livros:
+            if livro.getCategoria().lower() == autor.lower():
+                lista_autor.append(livro)
+        
+        if not lista_autor:
+            print(f"Nenhum livro encontrado com esse '{autor}'")
+            return
+            
+        for livro in lista_autor:
+            if livro.getDisponibilidade() == True:
+                status = "Disponivel"
+            else:
+                status = "Emprestado"
+            print(f"{livro.getTitulo()} - {livro.getCategoria()} ({livro.getAno()}) | [{status}]")
+        time.sleep(2)
+
+    def listar_emprestados(self):
+        print("Você está na parte de listar por emprestados.\n")
+        lista_emprestados = []
+        if livro['disponibilidade'] == True:
+            lista_emprestados.append(livro)
+        
+        if not lista_emprestados:
+            print(f"Nenhum livro encontrado está emprestado")
+            return
+            
+        for livro in lista_emprestados:
+            print(f"{livro.getTitulo()} - {livro.getCategoria()} - {livro.getAutor()} ({livro.getAno()})")
+        time.sleep(2)        
     # -------------------------------------------------------------------
     def atualizar_livros(self):
         atualizar_livro = input("Digite o nome do livro que deseja atualizar: ")
@@ -165,28 +212,32 @@ class Biblioteca:
             livro_encontrado.setCategoria(nova_categoria)
         
         print(f"Livro '{livro_encontrado.getTitulo()}' atualizado com sucesso!")
-
-    def emprestar_livro(self):
-        titulo = input("Digite o título do livro para empréstimo: ")
-        for livro in self.__livros:
-            if livro.getTitulo().lower() == titulo.lower():
-                livro.emprestar()
-                return
-        print("Livro não encontrado")
-
-    def devolver_livro(self):
-        titulo = input("Digite o título do livro para devolução: ")
-        for livro in self.__livros:
-            if livro.getTitulo().lower() == titulo.lower():
-                livro.devolver()
-                return
-        print("Livro não encontrfado")
+        time.sleep(2)
 
     def excluir(self):
         titulo = input("Digite o título do livro que deseja excluir: ")
         for livro in self.__livros:
             if livro.getTitulo() == titulo:
-                Biblioteca.remove(livro)
+                self.__livros.remove(livro)
                 print(f"O livro '{titulo}' foi removido com sucesso!")
+                time.sleep(2)
                 return
         print("Livro não encontrado!")
+
+    def emprestar_livro(self):
+        titulo = input("Digite o título do livro para empréstimo: ")
+        for livro in self.__livros:
+            if livro.getTitulo().lower() == titulo.lower():
+                livro.emprestar() 
+                return
+        print("Livro não encontrado")
+        os.system("pause")
+
+    def devolver_livro(self):
+        titulo = input("Digite o título do livro para devolução: ")
+        for livro in self.__livros:
+            if livro.getTitulo().lower() == titulo.lower():
+                livro.devolver()  
+                return
+        print("Livro não encontrado")
+        os.system("pause")
