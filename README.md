@@ -352,7 +352,9 @@ class Biblioteca:
         print()
         os.system("pause")
 ```
-
+---
+# Explicação
+---
 ## class Livro:
 
 ```python
