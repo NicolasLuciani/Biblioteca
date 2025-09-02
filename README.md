@@ -805,11 +805,9 @@ while True:                   # criação do menu
 ```
 #### Agora para o menu, temos as bibliotecas importadas, time e os, para a estética do código, o menu te da opções de cadastrar livro, emprestar um livro, devolver os livros,  escolher o tipo da lista, atualizar os livros, excluir livros e sair do sistema, cada escolha vai a uma função ja explicada
 #### Caso você coloque uma opção que não existe ele te integra:
-<pre>
 ```python
 ESCOLHA INVÁLIDA
 ```
-</pre>
 ## Bibliotecas Python que usamos:
 
 ### Neste projeto, utilizamos algumas bibliotecas padrão do Python:
